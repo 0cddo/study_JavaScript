@@ -3,7 +3,7 @@
 // 특정 조건을 만족하는 원소들을 가지고 새로 배열을 만드는 것
 
 // done 값이 false인 것 필터링
-// 개존 배열 건드리지 않고 새로운 배열 만듬
+// 기존 배열 건드리지 않고 새로운 배열 만듬
 // 조건확인 ->  함수 삽입
 // 매우 유용
 
@@ -32,7 +32,7 @@ const todos = [
 ];
 
 const taskNotDone = todos.filter(todo => todo.done === false);     // !todo.done
-console.log(taskNotDone);
+console.log(taskNotDone);   // [{ id: 4, text: '클래스 배우기', done: false }]
 
 
 

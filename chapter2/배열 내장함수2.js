@@ -108,5 +108,6 @@ console.log(index);         // 2
 // 배열의 원소 찾은 값을 반환함 
 // indexOf, findeIndex와 finde는 가장 첫번째로 찾은 항목을 알려줌
 
-const todo = todos.find(todo => todo.done === false);   
-console.log(todo);
+const todo = todos.find(todo => todo.id === 3);   
+console.log(todo);      // {id: 3, text: '객체와 배열 배우기', done: true}
+
