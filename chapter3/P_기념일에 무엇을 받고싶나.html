@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+
+const input = prompt('기념일에 어떤 선물을 줘야 좋을까요?', '알고 싶은 기념일을 입력하세요, (ex. 생일)')
+let gift = String(input);
+
+function presents(giftAnswer) {
+  const anniversary = {
+    설날: () => document.write('세뱃돈!'),
+    크리스마스: () => document.write('산타할아버지께서 주겠지~'),
+    처음사귄날: () => document.write('여행!')
+  };
+  const theGift = anniversary[giftAnswer];
+  if(!theGift) {
+    document.write('준비안하고 뭐했냐아아ㅏ~~~😫')
+    return;
+  } theGift();
+}
+
+document.write(`영은이가 ${gift}에 받고 싶은 선물이 궁금해? 답은...!?</br>`) 
+document.write(presents(gift))
+
+
+  </script>
+</body>
+</html>

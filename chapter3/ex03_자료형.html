@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+<script>
+ 
+ // prompt() 함수
+
+/* // 싱수 선언
+const input = prompt('이름을 입력하세요(요청 내용)', '홍길동(기본 메시지');
+// 사용자 입력 -> prompt() 함수 문자열 저장함, 
+    // -> const input = '사용자 입력 내용'
+
+// 출력
+alert(input); */
+
+
+
+// confirm() 함수
+
+/* // 상수 선언
+const input = confirm('수락하시겠습니까?');
+
+// 출력
+alert(input); */
+
+
+
+// 예제
+// Inch 단위 cm로 변경
+/* const input = prompt('인치 값을 입력하세요', '0');
+
+const inch = Number(input);
+const changeCm = inch * 2.54;
+
+document.write(`입력한 ${inch}inch는 ${changeCm}cm입니다.`) */
+
+
+
+// 예제 2
+// cm를 인치로 변화
+/* const input = prompt('cm값을 입력하세요', '0');
+
+const cm = Number(input);
+const toInch = cm / 2.54;
+const inchFixed = toInch.toFixed(6);        // 소수점 함수
+
+document.write(`입력하신 ${cm}cm는 ${inchFixed}inch 입니다.`) */
+
+
+
+// 예제 3
+// 반지름 입력받아 원의 넓이와 둘레를 구해라
+
+const input = prompt('반지름의 길이를 입력하세요');
+
+const r = Number(input);
+const roundWidth = r * r * 3.14;
+const roundLength = r * 2 * 3.14;
+
+document.write(`입력한 반지름 원의 너비는 ${roundWidth}이고, 둘레는 ${roundLength}입니다.`)
+    
+</script>
+</body>
+</html>
