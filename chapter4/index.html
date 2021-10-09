@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Basic</title>
+  </head>
+  <body>
+    <h1>JavaScript</h1>
+
+    <script>
+      // var movies = ["아이언맨", "나홀로집에", "내부자들", "택시기사", "가오갤"];
+
+      // for (var i = 0; i < movies.length; i++) {
+      //   console.log(movies[i]);
+      // }
+
+      // this
+      var kimi = {
+        username: "현준",
+        age: 32,
+        introduce: function () {
+          console.log(
+            `안녕 나는 ${this.username}이라고 해, 나는  ${this.age}살 이야아`
+          );
+        },
+      };
+
+      kimi.introduce();
+    </script>
+  </body>
+</html>
