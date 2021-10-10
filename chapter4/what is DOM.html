@@ -5,34 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript</title>
+    <style>
+      #main-title small {
+        color: rebeccapurple;
+      }
+    </style>
   </head>
   <body>
     <h1 id="main-title">
       DOM (Document Object Model)
-      <span>hello 0</span>
-      <span>hello 1</span>
-      <span>hello 2</span>
+      <small>small</small>
     </h1>
     <!-- DOM 스크립트 : html elements를 javascript로 조작할 수 있게 함 -->
-    <article>
-      <header class="main-header">header</header>
-      <section>
-        <header>header</header>
-        section1
-      </section>
-      <section>
-        <header>header</header>
-        section2
-      </section>
-    </article>
-
+    <ul>
+      <li class="cuteDog"><img src="img/cuteDog.jpeg" alt="" /></li>
+      <li class="cuteDog"><img src="img/cuteDog.jpeg" alt="" /></li>
+      <li class="cuteDog"><img src="img/cuteDog.jpeg" alt="" /></li>
+    </ul>
     <script>
-      // script는 하단에
-      // 객체안의 함수는 메서드
-      // document 객체안의 getElementById 메서드(매개변수) 호출
-      let title = document.getElementById("main-title");
-      let titleSpan = title.getElementsByTagName("span");
-      console.log(titleSpan[2]);
+      // let mainTitle = document.querySelector("#main-title small");
+      // console.log(mainTitle);
+
+      let cuteDog = document.querySelectorAll(".cuteDog");
+      for (let i = 0; i < cuteDog.length; i++) {
+        cuteDog[i].style.border = "5px solid blue";
+        // cuteDog[i].style.display = "inline-block";
+      }
     </script>
   </body>
 </html>
