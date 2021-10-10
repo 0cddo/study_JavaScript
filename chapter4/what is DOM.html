@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript</title>
+
+    <script>
+      // script 태그 head 내부에 있을 때 html로딩을 읽을 때까지 기다려주는 이벤트 입력 필요 (일반적으로는 body태그 하단 script 태그 입력)
+      // 1. window.onload = function() {}
+      /* window.onload = function () {
+        var title = document.getElementById("main-title");
+        console.log(title);
+      }; */
+
+      // 2.  window.addEventListener('load', ) -> window 전역 객체의 메서드 실행 , load: 모든 것이 로드될 때까지 기다림
+      /*  window.addEventListener("load", function () {
+        let title = document.getElementById("main-title");
+        console.log(title);
+      }); */
+
+      // 3. window.addEventListener('DOMContentLoaded',) DOM 컨텐츠가 로드될 때까지만 기다림(데이터를 제외한 태그들 로드될 때까지만 )
+      /*  window.addEventListener("DOMContentLoaded", function () {
+        let title = document.getElementById("main-title");
+        console.log(title);
+      }); */
+
+      // 기타 JQuery :
+      /* $(function () {
+            JQuery 에서의 문서 로딩 기다림
+      }); */
+    </script>
+  </head>
+  <body>
+    <h1 id="main-title">DOM (Document Object Model)</h1>
+    <!-- DOM 스크립트 : html elements를 javascript로 조작할 수 있게 함 -->
+    <article>
+      <header class="main-header">header</header>
+      <section>
+        <header>header</header>
+        section1
+      </section>
+      <section>
+        <header>header</header>
+        section2
+      </section>
+    </article>
+
+    <script></script>
+  </body>
+</html>
