@@ -6,31 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript</title>
     <style>
-      #main-title small {
-        color: rebeccapurple;
+      li {
+        list-style: none;
       }
     </style>
   </head>
   <body>
-    <h1 id="main-title">
-      DOM (Document Object Model)
-      <small>small</small>
-    </h1>
+    <h1 id="main-title">DOM (Document Object Model)</h1>
     <!-- DOM 스크립트 : html elements를 javascript로 조작할 수 있게 함 -->
     <ul>
-      <li class="cuteDog"><img src="img/cuteDog.jpeg" alt="" /></li>
+      <li class="cuteDog">
+        <img src="img/cuteDog.jpeg" alt="" />
+        <a class="link-google" href="http://google.com">Google</a>
+      </li>
       <li class="cuteDog"><img src="img/cuteDog.jpeg" alt="" /></li>
       <li class="cuteDog"><img src="img/cuteDog.jpeg" alt="" /></li>
     </ul>
     <script>
-      // let mainTitle = document.querySelector("#main-title small");
-      // console.log(mainTitle);
-
-      let cuteDog = document.querySelectorAll(".cuteDog");
-      for (let i = 0; i < cuteDog.length; i++) {
-        cuteDog[i].style.border = "5px solid blue";
-        // cuteDog[i].style.display = "inline-block";
-      }
+      let link = document.querySelector(".cuteDog a");
+      // getAttribute 속성가져오기 (return 값이 있는 메서드)
+      console.log(link.getAttribute("href"));
+      // setAttribute 속성 지정 (return 값이 없는 메서드)
+      link.setAttribute("href", "http://naver.com");
+      console.log(link.getAttribute("href"));
     </script>
   </body>
 </html>
