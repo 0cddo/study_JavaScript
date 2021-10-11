@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript</title>
     <style>
+      .main-title {
+        font-size: 3rem;
+        background: yellow;
+      }
+      .title-color {
+        background-color: dodgerblue;
+      }
+
       li {
         list-style: none;
       }
@@ -18,10 +26,13 @@
       .special {
         background-color: pink;
       }
+      .btn {
+        font-size: 2rem;
+      }
     </style>
   </head>
   <body>
-    <h1 id="main-title">DOM (Document Object Model)</h1>
+    <h1 class="main-title">Event</h1>
     <!-- DOM 스크립트 : html elements를 javascript로 조작할 수 있게 함 -->
     <ul class="list-parent">
       <li class="cuteDog">
@@ -31,14 +42,21 @@
       <li class="cuteDog"><img src="img/cuteDog.jpeg" alt="" /></li>
       <li class="cuteDog"><img src="img/cuteDog.jpeg" alt="" /></li>
     </ul>
+    <button class="btn">click!</button>
     <script>
-      // element 만들고 html 내부에 추가하기
-      let listParent = document.querySelector(".list-parent");
-      let listElem = document.createElement("li");
-      // innerHTML은 속성 (메서드 아님)
-      listElem.innerHTML = "<span>졸귀 강아지</span>";
-      // child로 추가할 element 입력
-      listParent.appendChild(listElem);
+      // 이벤트 : 정적인 가운데 동적인 사건 발생시키는 것
+      const title = document.querySelector(".main-title");
+      const btn = document.querySelector(".btn");
+      const btnClickHandler = () => {
+        title.style.background = "dodgerblue";
+        // title.classList.replace("main-title", "title-color");
+        // title.classList.add("title-color");
+      };
+
+      btn.addEventListener("click", btnClickHandler);
+
+      // onclick 속성
+      // btn.onclick = btnClickHandler;
     </script>
   </body>
 </html>
