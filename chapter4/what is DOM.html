@@ -9,6 +9,15 @@
       li {
         list-style: none;
       }
+      .link-google {
+        color: red;
+      }
+      .foo {
+        font-size: 24px;
+      }
+      .special {
+        background-color: pink;
+      }
     </style>
   </head>
   <body>
@@ -16,7 +25,7 @@
     <!-- DOM 스크립트 : html elements를 javascript로 조작할 수 있게 함 -->
     <ul>
       <li class="cuteDog">
-        <img src="img/cuteDog.jpeg" alt="" />
+        <img src="img/cuteDog.jpeg" alt="cute dog" />
         <a class="link-google" href="http://google.com">Google</a>
       </li>
       <li class="cuteDog"><img src="img/cuteDog.jpeg" alt="" /></li>
@@ -24,11 +33,17 @@
     </ul>
     <script>
       let link = document.querySelector(".cuteDog a");
-      // getAttribute 속성가져오기 (return 값이 있는 메서드)
-      console.log(link.getAttribute("href"));
-      // setAttribute 속성 지정 (return 값이 없는 메서드)
-      link.setAttribute("href", "http://naver.com");
-      console.log(link.getAttribute("href"));
+      // className 추가
+      // link.className = "special";
+
+      // class 추가 및 제거
+      link.classList.add("special", "foo");
+      setTimeout(() => {
+        link.classList.remove("link-google", "foo");
+      }, 2000);
+
+      // classList contains 메서드 -> boolean
+      console.log(link.classList.contains("special"));
     </script>
   </body>
 </html>
