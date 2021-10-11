@@ -23,7 +23,7 @@
   <body>
     <h1 id="main-title">DOM (Document Object Model)</h1>
     <!-- DOM 스크립트 : html elements를 javascript로 조작할 수 있게 함 -->
-    <ul>
+    <ul class="list-parent">
       <li class="cuteDog">
         <img src="img/cuteDog.jpeg" alt="cute dog" />
         <a class="link-google" href="http://google.com">Google</a>
@@ -32,18 +32,13 @@
       <li class="cuteDog"><img src="img/cuteDog.jpeg" alt="" /></li>
     </ul>
     <script>
-      let link = document.querySelector(".cuteDog a");
-      // className 추가
-      // link.className = "special";
-
-      // class 추가 및 제거
-      link.classList.add("special", "foo");
-      setTimeout(() => {
-        link.classList.remove("link-google", "foo");
-      }, 2000);
-
-      // classList contains 메서드 -> boolean
-      console.log(link.classList.contains("special"));
+      // element 만들고 html 내부에 추가하기
+      let listParent = document.querySelector(".list-parent");
+      let listElem = document.createElement("li");
+      // innerHTML은 속성 (메서드 아님)
+      listElem.innerHTML = "<span>졸귀 강아지</span>";
+      // child로 추가할 element 입력
+      listParent.appendChild(listElem);
     </script>
   </body>
 </html>
