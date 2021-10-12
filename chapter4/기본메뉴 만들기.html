@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>basic menu</title>
+    <style>
+      .main-title {
+        font-size: 3rem;
+        background: gold;
+      }
+      .menu {
+        display: flex;
+      }
+      .menu-link {
+        margin: 0.1em;
+        padding: 0.3em;
+        color: #fff;
+        text-decoration: none;
+        background: dodgerblue;
+        letter-spacing: none;
+      }
+
+      .menu-active {
+        background: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="main-title">Event</h1>
+
+    <nav class="menu">
+      <a href="#" class="menu-link" data-menu="1">menu 1</a>
+      <a href="#" class="menu-link" data-menu="2">menu 2</a>
+      <a href="#" class="menu-link" data-menu="3">menu 3</a>
+    </nav>
+
+    <script>
+      const menuLinks = document.querySelectorAll(".menu-link");
+
+      // 화살표함수 this 사용 불가
+      function ClickMenuHandler() {
+        //   DOM 스크립트 의존적 , DOM 스크립트 속도 느림, DOM 한정적 범용적인 것 필요 (ex. canvas 활용 시)
+        /* let menuActive = document.querySelector(".menu-active");
+        if (menuActive) {
+          menuActive.classList.remove("menu-active");
+        } */
+
+        let currentMenu = document.querySelector(".menu-active");
+        if (currentMenu) {
+          currentMenu.classList.remove("menu-active");
+        }
+        currentMenu = this;
+        this.classList.add("menu-active");
+        // console.log(currentMenu);
+      }
+
+      for (let i = 0; i < menuLinks.length; i++) {
+        menuLinks[i].addEventListener("click", ClickMenuHandler);
+      }
+    </script>
+  </body>
+</html>
