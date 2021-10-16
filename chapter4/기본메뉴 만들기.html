@@ -38,21 +38,26 @@
     </nav>
 
     <script>
-      //   addEventListener가 많을 수록 웹페이지 성능에 악영향 미침 -> 이벤트 위임(부모에 addEventListener 위임)
-      //   이벤트 위임의 장점 : 이벤트를 모두 만들기 보다 컨테이너의 타겟의 값에 동작될 수 있도록 함 (무한스크롤에서 좋음)
-      // this는 addEventListener를 호출한 객체!!
+      // 코드 개선하기
       const menu = document.querySelector(".menu");
-      //   매개변수 e -> 함수가 이벤트핸들러로 실행될 때 자동으로 첫번째 매개변수 자리에 이벤트객체가 들어감, click 이벤트여서 PointerEvent 들어감
+
+      // 활성화 함수
+      function activate(elem) {
+        elem.classList.add("menu-active");
+        currentMenu = elem;
+      }
+      // 비활성화 함수
+      function inactivate(elem) {
+        elem.classList.remove("menu-active");
+      }
+
+      // 이벤트 핸들러의 기능은 간단하게, 필요에 따라 호출만 가능하게끔 코드 개선
       function ClickHandler(e) {
         let currentMenu = document.querySelector(".menu-active");
         if (currentMenu) {
-          currentMenu.classList.remove("menu-active");
+          inactivate(currentMenu);
         }
-        e.target.classList.add("menu-active");
-        currentMenu = e.target;
-        // console.log(e.target);
-        // console.log(e.currentTarget === this); // target과 다름
-        // console.log(this);
+        activate(e.target);
       }
       menu.addEventListener("click", ClickHandler);
     </script>
