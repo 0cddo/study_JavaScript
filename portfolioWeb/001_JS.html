@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Album</title>
+  </head>
+  <body>
+    <h1>안녕하세요</h1>
+    위의 제목을 자바스크립트를 사용해 바꾸자<br />
+    아래 버튼을 눌러주세요. <br /><br />
+    <button class="click">Click!</button>
+
+    <script>
+      // 001
+      //   document.querySelector("h1").innerHTML = "반갑습니다";
+
+      //   002
+      /* if (confirm('"반갑습니다"로 바꾸시겠습니까?')) {
+        document.querySelector("h1").innerHTML = "반갑습니다";
+      } */
+
+      //   003
+      //   let salutation = prompt("인사말을 입력해주세요");
+      //   document.querySelector("h1").innerHTML = salutation;
+
+      //   004
+      let click = document.querySelector(".click");
+      click.addEventListener("click", () => {
+        let salutation = prompt("제목을 입력해주세요");
+        document.querySelector("h1").innerHTML = salutation;
+      });
+    </script>
+  </body>
+</html>
