@@ -7,10 +7,14 @@
     <title>Album</title>
   </head>
   <body>
-    <h1>안녕하세요</h1>
+    <!-- <h1>안녕하세요</h1>
     위의 제목을 자바스크립트를 사용해 바꾸자<br />
     아래 버튼을 눌러주세요. <br /><br />
-    <button class="click">Click!</button>
+    <button class="click">Click!</button> -->
+
+    <!-- 1초마다 인사말 바꾸기 -->
+    <h1>안녕하세요</h1>
+    1초마다 인사말 바꾸고있습니다
 
     <script>
       // 001
@@ -26,11 +30,19 @@
       //   document.querySelector("h1").innerHTML = salutation;
 
       //   004
-      let click = document.querySelector(".click");
+      /* let click = document.querySelector(".click");
       click.addEventListener("click", () => {
         let salutation = prompt("제목을 입력해주세요");
         document.querySelector("h1").innerHTML = salutation;
-      });
+      }); */
+
+      //   005 - 1초마다 인사말 바꾸기
+      let salutation = ["안녕하세요", "반갑습니다"];
+      let i = 0;
+      setInterval(function () {
+        i = 1 - i;
+        document.querySelector("h1").innerHTML = salutation[i];
+      }, 1000);
     </script>
   </body>
 </html>
