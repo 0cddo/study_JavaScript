@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <h1>페이지 제목</h1>
+
+    <h2>자료형 실험</h2>
+    <div id="typeTest"></div>
+  </body>
+  <script>
+    //   001 - string: 문자열
+    /*  document.querySelector("h1").innerHTML = "자료형과 변수";
+    console.log(typeof "자료형과 변수");
+    console.log(typeof 123);
+
+    document.querySelector("#typeTest").innerHTML = "hello world";
+    console.log(typeof "hello world");
+
+    console.log("안녕하세요" + " " + "반갑습니다."); */
+
+    // 002 - number: 숫자
+    /*    console.log(typeof 123);
+    document.querySelector("#typeTest").innerHTML = 123;
+
+    console.log(1 + 2);
+    console.log(5 - 3.7); // 1.29999999999998 (컴퓨터가 이진법이기 때문에 연산 결과 다음과 같이 출력됨 )
+    console.log(-0.5 + 3.14 * 2);
+    console.log(4 / (1 + 5));
+
+    console.log(13 % 5); // 나머지 연산 (홀수 짝수 / x의 배수 확인에 유용하게 사용)
+
+    console.log("number" + 1); */
+
+    // 003 - variable (변수)
+    document.querySelector("h1").innerHTML = "hello world";
+    let salutation = "안녕하세요, 반갑습니다.";
+    let typeTestDiv = document.querySelector("#typeTest");
+    typeTestDiv.innerHTML = salutation;
+
+    let myNumber = 3;
+    console.log(myNumber + 3);
+    console.log(myNumber++);
+    console.log(myNumber--);
+    console.log((myNumber += 3));
+    console.log((myNumber -= 5));
+    console.log(myNumber);
+
+    let myName = "홍";
+    console.log((myName += "길동"));
+    console.log(myName);
+  </script>
+</html>
