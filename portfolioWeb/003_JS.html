@@ -10,14 +10,15 @@
     <h1></h1>
 
     <script>
-      if (confirm("이 사이트 방문이 처음이십니까?")) {
+      // 사용자의 선택에 따른 결과 출력
+      /*  if (confirm("이 사이트 방문이 처음이십니까?")) {
         document.querySelector("h1").innerHTML = "처음뵙겠습니다. 환영합니다.";
       } else {
         document.querySelector("h1").innerHTML = "다시 오신걸 환영합니다. ";
       }
 
       let myBool1 = true;
-      let myBool2 = false;
+      let myBool2 = false; */
 
       //   console.log(!myBool1);
       //   console.log(!myBool2);
@@ -28,17 +29,41 @@
       //   console.log("a" > "b"); // false
 
       //   true를 false보다 크게 침
-      console.log(true > false); // true
+      /* console.log(true > false); // true
       console.log(true < false); // false
       console.log((false === false) > false); //true
-
+ */
       //   && 연산자
-      console.log(1 + 1 === 2 && 1 + 2 === 3); // true
-      console.log(1 + 1 === 3 && 1 + 2 === 3); // false
+      /* console.log(1 + 1 === 2 && 1 + 2 === 3); // true
+      console.log(1 + 1 === 3 && 1 + 2 === 3); // false */
 
       //   or 연산자
-      console.log((true && false) || true); // true
-      console.log((100 > 200 || 20 <= 30) && "감자" < "고구마"); // true
+      /* console.log((true && false) || true); // true
+      console.log((100 > 200 || 20 <= 30) && "감자" < "고구마"); // true */
+
+      //   조건문
+      if (true) {
+        console.log("yes");
+      }
+
+      if (1 + 1 === 3) {
+        console.log("yes");
+      } else {
+        console.log("nope");
+      }
+
+      let myNumber = 25;
+      if (myNumber % 3 === 0) {
+        console.log(myNumber + "는 3의 배수입니다.");
+      } else if (myNumber % 3 === 1) {
+        console.log(myNumber + "는 3의 배수 + 1입니다.");
+      } else {
+        console.log(myNumber + "는 3의 배수 +2입니다. ");
+      }
+
+      //   삼항연산자
+      let largerNumber = 10 > 24 ? 10 : 24;
+      console.log(largerNumber);
     </script>
   </body>
 </html>
