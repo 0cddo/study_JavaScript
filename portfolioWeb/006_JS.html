@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <!-- HTML요소 생성하여 삽입하기  -->
+    <!-- <div class="box1"></div> -->
+
+    <!-- <ul></ul>
+    <ol></ol> -->
+
+    <script>
+      /*  let spanEl = document.createElement("span");
+      spanEl.append("삽입된 문자열");
+
+      document.querySelector(".box1").append(spanEl); */
+
+      /* let things = ["냉장고", "코끼리", "기린"];
+      let steps = [
+        "냉장고 문을 연다",
+        "기린을 꺼낸다",
+        "코끼리를 넣는다",
+        "냉장고 문을 닫는다",
+      ];
+
+      let thingsUl = document.querySelector("ul");
+      for (let i = 0; i < things.length; i++) {
+        let li = document.createElement("li");
+        li.append(things[i]);
+        thingsUl.append(li);
+      }
+
+      let stepsOl = document.querySelector("ol");
+      for (let j = 0; j < steps.length; j++) {
+        let li = document.createElement("li");
+        li.append(steps[j]);
+        stepsOl.append(li);
+      } */
+
+      ///////////////////////
+      // 구구단표 만들기
+
+      let table = document.createElement("table");
+      for (let i = 1; i < 10; i++) {
+        let tr = document.createElement("tr");
+        for (let j = 1; j < 10; j++) {
+          let td = document.createElement("td");
+          td.append(i * j);
+          tr.append(td);
+        }
+        table.append(tr);
+      }
+      document.querySelector("body").append(table);
+    </script>
+  </body>
+</html>
