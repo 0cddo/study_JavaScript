@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      // array
+      let myNumberArray = [1, 2, 3, 4, 5];
+      console.log(myNumberArray[0]);
+
+      let firstNumber = myNumberArray[0];
+      let lastNumber = myNumberArray[4];
+
+      console.log(firstNumber, lastNumber);
+
+      let arrayOfTwo = [firstNumber, lastNumber];
+      console.log(arrayOfTwo);
+
+      let generals = ["이순신", "을지문덕", "장보고", "강감찬"];
+      console.log(generals[2]);
+
+      let onOff = [true, false];
+      console.log(onOff[1]);
+
+      let multiType = [100, true, [1, 2, 3], "English"];
+      console.log(multiType);
+      console.log(typeof multiType);
+      console.log(typeof multiType[1]);
+      console.log(multiType[2][0]);
+
+      //   array의 length
+      console.log(multiType.length);
+      console.log(multiType[2].length);
+
+      //  array의 마지막 요소 구하기
+      console.log(generals.length - 1);
+      console.log(generals[generals.length - 1]); // 강감찬
+
+      // 배열의 index 알기
+      let fruits = ["apple", "orange", "banana", "grape"];
+      console.log(fruits.indexOf("apple"));
+      console.log(fruits.indexOf("mango")); // -1 (없음)
+
+      //   요소 바꾸기
+      generals[2] = "김유신";
+      console.log(generals);
+
+      //   요소 추가하기
+      let myArray = [];
+      myArray.push(300);
+      console.log(myArray.length);
+
+      myArray.push(200);
+      myArray.push(100);
+      console.log(myArray);
+
+      // 배열 이어붙임
+      let myArray2 = myArray.concat([90, 80, 70]);
+      console.log(myArray2);
+
+      myNumberArray.push(6);
+      console.log(myNumberArray);
+      console.log([0].concat(myNumberArray)); // 값이 변하지는 않음
+      console.log(myNumberArray);
+
+      //   splice (제거 용도) , 몇번째 요소 몇 개 제거
+      console.log(myNumberArray.splice(2, 1));
+      console.log(myNumberArray);
+    </script>
+  </body>
+</html>
