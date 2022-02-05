@@ -28,61 +28,108 @@
       //  new Date()
 
       /*   let ul = document.querySelector("ul");
-           let li = document.createElement("li");
-
-           li.append(new Date());
-           ul.append(li); */
-
-      //   위의 코드 여러번 사용되어야 한다면
-      /*   function insertThisTime() {
-             let ul = document.querySelector("ul");
              let li = document.createElement("li");
 
              li.append(new Date());
-             ul.append(li);
-           }
+             ul.append(li); */
 
-           insertThisTime(); */
+      //   위의 코드 여러번 사용되어야 한다면
+      /*   function insertThisTime() {
+               let ul = document.querySelector("ul");
+               let li = document.createElement("li");
+
+               li.append(new Date());
+               ul.append(li);
+             }
+
+             insertThisTime(); */
 
       //   값을 인자로 넣어주기
       /*  function setPageTitle(title) {
-             document.querySelector("h1").innerHTML = title;
-           }
+               document.querySelector("h1").innerHTML = title;
+             }
 
-           setPageTitle("hello"); */
+             setPageTitle("hello"); */
 
       /*  const insertMemberToTeam = function (member, teamNumber) {
-             let li = document.createElement("li");
-             li.append(member);
-             document.querySelector("#team" + teamNumber).append(li);
-           };
+               let li = document.createElement("li");
+               li.append(member);
+               document.querySelector("#team" + teamNumber).append(li);
+             };
 
-           insertMemberToTeam("홍길동", 3);
-           insertMemberToTeam("오발탄", 3);
-           insertMemberToTeam("김치찜", 1);
-           insertMemberToTeam("된장찌개", 1);
-      */
+             insertMemberToTeam("홍길동", 3);
+             insertMemberToTeam("오발탄", 3);
+             insertMemberToTeam("김치찜", 1);
+             insertMemberToTeam("된장찌개", 1);
+        */
       //   함수의 값 반환하기
       /*   function getSum(num1, num2) {
-             return num1 + num2;
-           }
+               return num1 + num2;
+             }
 
-           console.log(getSum(10, 5)); */
+             console.log(getSum(10, 5)); */
 
       // 매개변수 값의 크기의 순서에 관계없이 정확한 값을 구할 수 있음
-      function addNumberBetween(num1, num2) {
-        let larger = num1 > num2 ? num1 : num2;
-        let smaller = num1 < num2 ? num1 : num2;
+      /*       function addNumberBetween(num1, num2) {
+          let larger = num1 > num2 ? num1 : num2;
+          let smaller = num1 < num2 ? num1 : num2;
 
-        let result = 0;
-        for (let i = smaller + 1; i < larger; i++) {
-          result += i;
+          let result = 0;
+          for (let i = smaller + 1; i < larger; i++) {
+            result += i;
+          }
+          return result;
+        }
+
+        console.log(addNumberBetween(5, 10));
+        console.log(addNumberBetween(7, 2)); */
+
+      //   함수를 이용한 배열 인자의 평균값 구하기
+      function getAverage(numbers) {
+        let sum = 0;
+        for (let i = 0; i < numbers.length; i++) {
+          sum += numbers[i];
+        }
+        return sum / numbers.length;
+      }
+
+      console.log(getAverage([2, 8, 5, 3, 10]));
+
+      //   return이 발생할 때 함수는 종료됨
+      // primenumber (소수) 구하기
+      let isPrimeNumber = function (num) {
+        if (num <= 1) {
+          return false;
+        } else if (num === 2) {
+          return true;
+        } else {
+          for (let i = 2; i < num; i++) {
+            if (num % i === 0) return false;
+          }
+          return true;
+        }
+      };
+
+      console.log(1 + " " + isPrimeNumber(1));
+      console.log(2 + " " + isPrimeNumber(2));
+      console.log(5 + " " + isPrimeNumber(5));
+      console.log(9 + " " + isPrimeNumber(9));
+      console.log(13 + " " + isPrimeNumber(13));
+      console.log(14 + " " + isPrimeNumber(14));
+
+      //   isPrimeNumber 함수를 이용하여 새로운 함수 만들기
+      //  --> 특정수(getSmallerPrimeNumbers)보다 작은 소수들 배열에 넣기
+      //   isPrimeNumber --> true or false 반환
+      function getSmallerPrimeNumbers(num) {
+        let result = [];
+        for (let i = 1; i < num; i++) {
+          if (isPrimeNumber(i)) result.push(i);
         }
         return result;
       }
 
-      console.log(addNumberBetween(5, 10));
-      console.log(addNumberBetween(7, 2));
+      console.log(getSmallerPrimeNumbers(50));
+      console.log(getAverage(getSmallerPrimeNumbers(50)));
     </script>
   </body>
 </html>
