@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <script>
+      //   002. 함수
+      function sayPageIsLoaded() {
+        document.querySelector("h1").innerHTML = "페이지 로드 완료";
+      }
+    </script>
+  </head>
+  <!-- 페이지가 로드될 때 함수 실행 됨 -->
+  <body onload="sayPageIsLoaded();">
+    <!-- 001. 함수를 이용한 이벤트 생성 -->
+    <!--  <button class="click">현 시간 기록</button>
+    <ul></ul> -->
+
+    <!-- 002. 함수 -->
+    <h1></h1>
+
+    <script>
+      // 001. 함수를 이용한 이벤트 생성
+      /* let click = document.querySelector(".click");
+      let ulEl = document.querySelector("ul");
+
+      click.addEventListener("click", () => {
+        let liEl = document.createElement("li");
+        liEl.append(new Date());
+        ulEl.append(liEl);
+      }); */
+    </script>
+  </body>
+</html>
