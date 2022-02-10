@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문자 자료형</title>
+  </head>
+  <body>
+    <script>
+      console.log("안녕하세요 심영은입니다. 만나서 반가워요".length);
+      console.log("자바스크립트"[3]);
+
+      //   마지막 글자 구하기
+      /*  let myString = "자바스크립트";
+        console.log(myString[myString.length - 1]); */
+
+      //   배열과 스트링의 차이
+      let myString = "서울소곱창";
+      console.log(myString[3]); // 곱
+      myString[3] = "막";
+      console.log(myString); // myString[3]을 '막'으로 바꿨지만 안바뀜 (string과 배열의 차이 )
+
+      //   글자수로 자르기
+      let myNum = "0123456789";
+      console.log(myNum.slice(3)); // "3456789" (3번째 자른 수 이후부터 반환)
+      console.log(myNum.slice(-3)); // '789' (뒤에서부터 자른 숫자 3개 반환 )
+      console.log(myNum.slice(4, 8)); // '4567' (4번째부터 8번째까지 반환)
+      console.log(myNum.slice(0, -3)); // '0123456' (0번째부터 뒤에서 3번째 이후 숫자까지 반환 )
+
+      //   문자열 일부 치환 (정규화식 코드 이용하면 쉬움)
+      /*  let replaceString = "저는 서울에 살고 있는 서울시민입니다.";
+        console.log(replaceString.replace("서울", "부산")); // 저는 부산에 살고 있는 서울시민입니다.
+        console.log(replaceString); // 저는 서울에 살고 있는 서울시민입니다.
+
+        replaceString = replaceString.replace("서울", "부산");
+        console.log(replaceString); // 저는 부산에 살고 있는 서울시민입니다.
+
+        replaceString = replaceString.replace("서울", "부산");
+        console.log(replaceString); // 저는 부산에 살고 있는 부산시민입니다. */
+
+      //   특정 글자를 지우고 싶을 때
+      console.log("자바스크립트".replace("스크립트", "")); // 자바
+
+      //   문자열 내 다른 문자열 위치
+      const mySnowman = "한겨울에 밀짚모자 꼬마 눈사람";
+      console.log(mySnowman.indexOf("꼬마")); // 10
+      console.log(mySnowman.indexOf("산타")); // -1
+
+      //   while을 이용해서 한번에 문자 바꾸기
+      let citizen = "저는 원주에 살고 있는 원주 시민입니다.";
+      while (citizen.indexOf("원주") !== -1) {
+        // console.log(citizen);
+        citizen = citizen.replace("원주", "서울");
+      }
+      console.log(citizen); // 저는 서울에 살고 있는 서울 시민입니다.
+
+      //   특정 문자 기준으로 배열로 분할
+      let myPhone = "010-1234-1234";
+      console.log(myPhone.split("-")); // ['010', '1234', '1234'] ( '-' 를 기준으로 배열로 만듬)
+      console.log(myPhone.split("-")[0]); // '010'
+
+      //   전체대문자, 소문자 변환
+      let christmas = "merry christmas";
+      console.log(christmas.toUpperCase()); // MERRY CHRISTMAS
+      console.log(christmas.toLowerCase()); // merry christmas
+
+      //  문자의 앞, 뒤 공백 없애기 (아이디, 패스워드 입력시에 공백제거할 수 있도록 사용 )
+      let space = " 영 씨 또 ";
+      console.log(space.length); // 7
+      console.log(space.trim().length); // 5
+      console.log(space.trim()); // '영 씨 또'
+    </script>
+  </body>
+</html>
