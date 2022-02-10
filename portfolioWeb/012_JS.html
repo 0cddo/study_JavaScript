@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자바스크립트로 스타일 제어하기</title>
+  </head>
+  <body>
+    <!-- <div>My Div</div> -->
+
+    <div class="click-btn">Click! Change Style!</div>
+
+    <script>
+      //   const divEl = document.querySelector("div");
+
+      //   스타일 제어하기
+      //   css 형식은 인라인 스타일로 들어감
+      //   특정 이벤트가 일어날 때 스타일 변화 줌, class를 이용하여 스타일 값 지정하는게 맞음
+      /*   divEl.style.color = "blue";
+
+        document.querySelector("div").style.color = "red";
+
+        divEl.style.fontWeight = "bold";
+
+        divEl.style.backgroundColor = "skyblue";
+        divEl.style.padding = "24px 36px";
+        divEl.style.display = "inline-block";
+        divEl.style.borderRadius = "12px"; */
+
+      //   클릭 이벤트-> 스타일 변화주기
+      const click = document.querySelector(".click-btn");
+      click.addEventListener("click", changeStyle);
+
+      function changeStyle() {
+        const newStyle = {};
+        newStyle.attribute = prompt("어떤 스타일을 변경하시겠어요?");
+        newStyle.value = prompt("어떤 값을 입력하시겠어요");
+
+        console.log(newStyle);
+
+        document.querySelector("div").style[newStyle.attribute] =
+          newStyle.value;
+      }
+
+      /*  attribute: "color"
+          value: "white"
+
+          attribute: "backgroundColor"
+          value: "black"
+
+          attribute: "padding"
+          value: "30px"
+
+          attribute: "width"
+          value: "300px"
+
+          attribute: "cursor"
+          value: "pointer"
+
+          attribute: "borderRadius"
+          value: "5px" */
+    </script>
+  </body>
+</html>
