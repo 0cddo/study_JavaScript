@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      th,
+      td {
+        border: 1px solid gray;
+        padding: 6px 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>이름</th>
+        <th>나이</th>
+        <th>회사</th>
+        <th>역할</th>
+        <th>연차</th>
+      </tr>
+    </table>
+
+    <script>
+      const person1 = {
+        name: "Simi",
+        age: 33,
+        married: false,
+        likes: ["reading", "plant", "Kimi", "coffee"],
+        job: {
+          company: "carrot market",
+          role: "frontend developer",
+          years: 1,
+        },
+        salutation: function () {
+          console.log("hello, im Simi");
+        },
+      };
+
+      const person2 = {
+        name: "Kimi",
+        age: 33,
+        married: false,
+        likes: ["Simi", "yoga", "movies"],
+        job: {
+          company: "google",
+          role: "manager",
+          years: 4,
+        },
+        salutation: function () {
+          console.log("hello, Im kimi");
+        },
+      };
+
+      const people = [person1, person2];
+      people.push({
+        name: "Siri",
+        age: 50,
+        married: false,
+        likes: ["apple", "steven", "mac"],
+        job: {
+          company: "apple",
+          role: "guide",
+          years: 50,
+        },
+        salutation: function () {
+          console.log("hello Im Siri");
+        },
+      });
+      // 표 채우기 함수
+      function fillTable() {
+        for (let i = 0; i < people.length; i++) {
+          let trEl = document.createElement("tr");
+
+          let tdEl_1 = document.createElement("td");
+          tdEl_1.append(people[i].name);
+          trEl.append(tdEl_1);
+
+          let tdEl_2 = document.createElement("td");
+          tdEl_2.append(people[i].age);
+          trEl.append(tdEl_2);
+
+          let tdEl_3 = document.createElement("td");
+          tdEl_3.append(people[i].job.company);
+          trEl.append(tdEl_3);
+
+          let tdEl_4 = document.createElement("td");
+          tdEl_4.append(people[i].job.role);
+          trEl.append(tdEl_4);
+
+          let tdEl_5 = document.createElement("td");
+          tdEl_5.append(people[i].job.years);
+          trEl.append(tdEl_5);
+
+          document.querySelector("table").append(trEl);
+        }
+      }
+
+      window.addEventListener("load", fillTable);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      // 01. 객체
+      let person1 = {
+        name: "0cddo",
+        age: "31",
+        married: false,
+        boyfriend: true,
+        likes: ["reading", "kimi", "coffee", "sweets"],
+        job: {
+          company: "carrot market",
+          role: "frontend developer",
+          year: 2,
+        },
+        salutation: function (who) {
+          console.log("hello,im 0cddo");
+        },
+      };
+
+      console.log(typeof person1); // object
+      console.log(person1.name); // 0cddo
+
+      console.log(person1.likes.length); // 4
+      console.log(person1.likes[1]); // kimi
+
+      console.log(person1.job.company); // carrot market
+      console.log(person1.job["role"]); // frontend developer
+      console.log(person1["job"]["year"]); // 2
+
+      console.log(person1.salutation("kimi"));
+
+      for (let i = 0; i < person1.likes.length; i++) {
+        console.log(person1.likes[i]);
+      }
+
+      person1.age = 32;
+      console.log(person1.age); // 32
+
+      person1.likes.push("plants");
+      console.log(person1.likes[4]);
+
+      //   객체 만들기
+      let person2 = {};
+      person2.name = "Kimi";
+      console.log(person2.name); // Kimi
+
+      person2.age = 33;
+      console.log(person2);
+
+      person2.married = false;
+      person2.likes = ["Simi", "Yoga", "Note", "Tech"];
+      person2.job = {
+        company: "yeoido",
+        role: "manager",
+        year: 4,
+      };
+      person2.salutation = function () {
+        console.log("Hello Im Kimi");
+      };
+
+      console.log(person2);
+
+      //   객체 배열에 넣기
+      const people = [person1, person2];
+      console.log(people);
+      console.log(people[0]);
+
+      people.push({
+        name: "Natalie",
+        age: 35,
+        married: true,
+        likes: ["game", "drink"],
+        job: {
+          company: "naver",
+          role: "designer",
+          year: 3,
+        },
+        salutation: function () {
+          console.log("im a designer");
+        },
+      });
+      console.log(people);
+      console.log(people[2]);
+
+      for (let i = 0; i < people.length; i++) {
+        people[i].salutation();
+      }
+    </script>
+  </body>
+</html>
