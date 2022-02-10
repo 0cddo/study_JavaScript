@@ -26,6 +26,10 @@ html {
   text-align: left;
 }
 
+h2 {
+  margin: 40px 0;
+}
+
 button {
   border: none;
   background-color: yellowgreen;
@@ -34,4 +38,5 @@ button {
   color: #fff;
   font-size: 15px;
   margin-left: 350px;
+  cursor: pointer;
 }
