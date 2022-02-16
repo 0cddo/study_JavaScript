@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>practice fetch api</title>
+  </head>
+  <body>
+    <article></article>
+    <input
+      type="button"
+      value="fetch"
+      onclick="
+      /*fetch('html').then(function(response) {
+        response.text().then(function(text) {
+            // alert(text);
+            document.querySelector('article').innerHTML = text
+        })
+    })*/
+
+    // Asynchronous (비동기, ajax)
+  /*   function callBackMe() {
+        console.log('response end')
+    }
+    fetch('html').then(callBackMe);
+    console.log(1);
+    console.log(2); */
+            // 호출 : 1 2 response end  
+
+    // ajax -> then에 익명함수 사용하기 
+    fetch('html').then(function(response) {
+        // console.log(response.status)
+        if(response.status === 404) {
+            alert('Not found')
+        } alert('success')
+    });
+    console.log(1);
+    console.log(2);
+    "
+    />
+
+    <!-- FETCH API 원리 -->
+    <!-- 클라이언트가 fetch('html')를 이용해 서버에 요청  
+        then() -> 서버가 응답할 때까지 시간이 걸릴 수 있기 때문에 그를 위해 있는 것이 then이다 , then(콜백함수)
+        콜백함수는 웹브라우저가 응답받는 것을 끝냈을 때 호출됨 
+
+        fetch api의 then에 콜백함수를 주면, 콜백 함수를 fetch api가 실행시킬 때 함수의 첫번째 인자의 값으로 response 객체의 값을 준다? , 입력값으로 어떤 것을 준다!
+        결과 : response라는 객체가 나옴
+            -> status: 200 / 웹 서버 통신 정상 200 (성공!)
+            -> fetch('javascript') 없는 파일이기 때문에 , 웹 서버 통신 실패 404
+
+        response web 서버가 응답한 결과, 어떤 상태로 통신했는지를 알 수 있음 
+    -->
+  </body>
+</html>
