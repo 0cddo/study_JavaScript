@@ -41,10 +41,15 @@ async function getQuotes() {
 }
 
 // Tweet Quote(트위터 버튼 함수)
+// 템플릿 스트링 (text)
 function twitterQuote() {
   const twitterUrl = `https://twitter.com/intent/tweet?text=${quoteText.textContent} - ${authorText.textContent}`;
   window.open(twitterUrl, '_blank');
 }
+
+// Event Listeners
+newQuoteBtn.addEventListener('click', newQuote);
+twitterBtn.addEventListener('click', twitterQuote);
 
 // on Load
 getQuotes();
