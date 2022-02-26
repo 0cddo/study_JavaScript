@@ -7,20 +7,19 @@ const loader = document.getElementById('loader');
 
 let apiQuotes = [];
 
-// Show Loading
-function loading() {
+function showLoadingSpinner() {
   loader.hidden = false;
   quoteContainer.hidden = true;
 }
 
-function complete() {
+function removeLoadingSpinner() {
   quoteContainer.hidden = false;
   loader.hidden = true;
 }
 // Show New Quote
 function newQuote() {
-  // new Quote 버튼을 누를 때 getQuotes 함수가 무시되고 newQuote함수만 실행되기 때문에 버튼을 두세번 누르면 getQuotes 함수가 무시되서, 기능을 확실하게 하기 위해 loading 함수를 추가로 넣는다
-  loading();
+  // new Quote 버튼을 누를 때 getQuotes 함수가 무시되고 newQuote함수만 실행되기 때문에 새로고침 두세번 누르면 getQuotes 함수가 무시되서, 기능을 확실하게 하기 위해 loading 함수를 추가로 넣는다
+  showLoadingSpinner();
 
   //  pick a random quote from apiQuotes array
   const quote = localQuotes[Math.floor(Math.random() * localQuotes.length)];
@@ -40,20 +39,23 @@ function newQuote() {
   }
   // Set Quote, Hide Loader
   quoteText.textContent = quote.text;
-  complete();
+  removeLoadingSpinner();
 }
 
 // Get Quotes From API
 async function getQuotes() {
-  loading();
+  showLoadingSpinner();
   const apiUrl = 'https://type.fit/api/quotes';
   try {
     const response = await fetch(apiUrl);
     apiQuotes = await response.json();
     // console.log(apiQuotes[12]);
     newQuote();
+    // throw new Error('oops');
   } catch (error) {
+    console.log(error);
     // Catch Error Here
+    // getQuotes(); 재귀함수 (무한루프)
   }
 }
 
